@@ -19,7 +19,7 @@
 DEVICE=saga
 MANUFACTURER=htc
 
-mkdir -p -d  ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/akmd
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/awb_camera -d  ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
