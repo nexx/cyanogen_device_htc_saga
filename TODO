@@ -17,16 +17,8 @@ Proprietary Files
   port by attn1.
 
   - libaudio.so results in no sound.
+    All DSP and Codec settings are tied to libaudio.so.
+    If libaudio.so calls for a preset which is unavailable,
+    bad things happen!
+
   - libcamera.so results in a freeze when loading the app
-
-Urgent Fixes
-- Phone calls do not function. Other user cannot hear
-  anything from the microphone and also hears a repeat
-  of their speech with a delay of 1 second.
-
-  - Not related to the RIL libraries.
-    Tested libhtc_ril.so from known working AOSP ROM.
-
-  - Seems to be aic3254 selecting the wrong tx mode
-    29 instead of 15. Not hardware related as other
-    AOSP ROM works correctly. DSP configuration?
