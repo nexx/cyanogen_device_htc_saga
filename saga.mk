@@ -70,24 +70,6 @@ PRODUCT_COPY_FILES += \
     device/htc/saga/keylayout/saga-keypad.kl:system/usr/keylayout/saga-keypad.kl \
     device/htc/saga/keylayout/saga-keypad-wwe.kl:system/usr/keylayout/saga-keypad-wwe.kl
 
-# Firmware
-PRODUCT_COPY_FILES += \
-    device/htc/saga/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/saga/firmware/default.acdb:system/etc/firmware/default.acdb \
-    device/htc/saga/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/saga/firmware/default_org_wb.acdb:system/etc/firmware/default_org_wb.acdb \
-    device/htc/saga/firmware/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \
-    device/htc/saga/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
-    device/htc/saga/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-    device/htc/saga/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-    device/htc/saga/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-    device/htc/saga/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
-    device/htc/saga/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-    device/htc/saga/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/htc/saga/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
-    device/htc/saga/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/saga/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
-
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
     device/htc/saga/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \

@@ -29,6 +29,21 @@ adb pull system/bin/logcat2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/bin/lsc_camera ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/bin/rmt_storage ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/bin/snd3254 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/bcm4329.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/default.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/default_org.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/default_org_wb.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/mp2_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_command_control.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_h263_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_h264_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_h264_enc_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_mp2_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_mp4_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_mp4_enc_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/vidc_720p_vc1_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/yamato_pfp.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+adb pull system/etc/firmware/yamato_pm4.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/egl/libEGL_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/egl/libGLESv2_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -78,6 +93,21 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/snd3254:/system/bin/snd3254 \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/default.acdb:system/etc/firmware/default.acdb \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/default_org.acdb:system/etc/firmware/default_org.acdb \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/default_org_wb.acdb:system/etc/firmware/default_org_wb.acdb \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
