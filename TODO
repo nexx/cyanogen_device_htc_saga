@@ -3,6 +3,7 @@ CyanogenMod Saga Device To-do List
 Kernel
 - Investigate qsd kernel errors
   "spi_qsd_new spi_qsd_new.0: SPI output underrun error"
+  - Occurs even with the stock kernel.
 
 - Investigate USB tethering. Unconfirmed.
 
@@ -13,8 +14,7 @@ Kernel
 Proprietary Files
 - Investigate why the shipped HTC Saga libaudio.so and
   libcamera.so fail to function with CM7. Currently using
-  libaudio, libaudioalsa and libcamera from the HTC Vivo
-  port by attn1.
+  libaudio and libcamera from the HTC Vivo port by attn1.
 
   - libaudio.so results in no sound.
     All DSP and Codec settings are tied to libaudio.so.
