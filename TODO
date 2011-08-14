@@ -1,24 +1,52 @@
-CyanogenMod Saga Device To-do List
-
-Kernel
-- Investigate qsd kernel errors
-  "spi_qsd_new spi_qsd_new.0: SPI output underrun error"
-  - Occurs even with the stock kernel.
-
-- Investigate USB tethering. Unconfirmed.
-
-- Work on porting the Saga source from HTC into the
-  official cm-kernel. Currently we use Cayniarb's 
-  Tiamat 1.4.0.1 kernel.
+CyanogenMod Saga Device To-do List / Notes
 
 Proprietary Files
-- Investigate why the shipped HTC Saga libaudio.so and
-  libcamera.so fail to function with CM7. Currently using
-  libaudio and libcamera from the HTC Vivo port by attn1.
+- libaudio.so & libcamera.so
+
+  The stock HTC Saga libaudio.so and libcamera.so are from
+  a Sense based ROM. For reasons I yet do not understand,
+  they do not function correctly when running on an AOSP
+  based ROM. The issue lies in userspace rather than the
+  kernel as they still fail to function running an AOSP
+  userspace with the stock HTC kernel.
+
+  Currently we're using libaudio.so and libcamera.so from
+  an OTA update for the HTC Vision (Desire Z). These were
+  released by T-Mobile USA which ship their version of the
+  HTC Vision with an AOSP ROM not a Sense one. This device
+  is the T-Mobile G2.
+
+  These libraries function correctly with our HTC Saga as
+  both devices are based on the same MSM7x30 application
+  processor, only running at different speeds.
 
   - libaudio.so results in no sound.
     All DSP and Codec settings are tied to libaudio.so.
-    If libaudio.so calls for a preset which is unavailable,
-    bad things happen!
+    Currently we use the stock Saga settings, perhaps it
+    is better to use the ones matching the libaudio we're
+    using.
 
-  - libcamera.so results in a freeze when loading the app
+  - libcamera.so results in a freeze when swapping cameras,
+    once the freeze has occured the camera cannot be
+    accessed until a reboot has occurred.
+
+
+- libhtc_ril.so
+
+  Some Saga handsets exhibit a phone-call disconnection when
+  the screen shuts off. This has been traced to a function
+  call in libhtc_ril.so "ril_func_screen_state_notified()"
+  trying to access a sysfs entry which does not exist on
+  the AOSP kernel:
+
+  /sys/devices/platform/msm_hsusb/usb_function_switch
+
+  This results in a SEGFAULT in the rild process, causing
+  the Android to loose the radio momentarily.
+
+  It is currently unknown as to why this doesn't affect
+  all Saga handsets but the solution is again to use the
+  libhtc_ril.so from the T-Mobile G2 USA OTA update.
+
+  This potentially causes issues with a ril vs radio
+  firmware mismatch, but none have been reported so far.
