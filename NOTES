@@ -1,0 +1,45 @@
+CyanogenMod Saga Device Notes
+
+Proprietary Files
+- libcamera.so
+
+  The stock HTC Saga libcamera library is from a Sense
+  based ROM. For reasons I yet do not understand, it
+  does  not function correctly when running on an AOSP
+  based ROM. The issue lies in userspace rather than the
+  kernel as it still fails to function when running an
+  AOSP userspace with the stock HTC kernel.
+
+  Currently we use the camera library from an OTA update for
+  the HTC Vision (Desire Z). This was released by T-Mobile
+  USA which ship their version of the HTC Vision with an
+  AOSP ROM not a Sense one. This device is the T-Mobile G2.
+
+  This library functions correctly with our HTC Saga as
+  both devices are based on the same MSM7x30 application
+  processor, only running at different speeds.
+
+  Using the stock libcamera.so results in a freeze when
+  swapping cameras, once the freeze has occured the camera
+  cannot be accessed until a reboot has occurred.
+
+
+- libhtc_ril.so
+
+  Some Saga handsets exhibit a phone-call disconnection when
+  the screen shuts off. This has been traced to a function
+  call in libhtc_ril.so "ril_func_screen_state_notified()"
+  trying to access a sysfs entry which does not exist on
+  the AOSP kernel:
+
+  /sys/devices/platform/msm_hsusb/usb_function_switch
+
+  This results in a SEGFAULT in the rild process, causing
+  the Android to loose the radio momentarily.
+
+  It is currently unknown as to why this doesn't affect
+  all Saga handsets but the solution is again to use the
+  libhtc_ril.so from the T-Mobile G2 USA OTA update.
+
+  This potentially causes issues with a ril vs radio
+  firmware mismatch, but none have been reported so far.

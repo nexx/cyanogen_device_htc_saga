@@ -1,41 +1,38 @@
-CyanogenMod Saga Device To-do List / Notes
+CyanogenMod Saga Device To-do List
 
-Proprietary Files
-- libaudio.so & libcamera.so
+- libaudio.so
+  Initial testing shows the libaudio-msm7x30 source in
+  the CyanogenMod tree functions as a replacement for the
+  HTC proprietary libaudio.so. Further testing is required
+  to see if all needed functions work as expected.
 
-  The stock HTC Saga libaudio.so and libcamera.so are from
-  a Sense based ROM. For reasons I yet do not understand,
-  they do not function correctly when running on an AOSP
-  based ROM. The issue lies in userspace rather than the
-  kernel as they still fail to function running an AOSP
+- libcamera.so
+  The stock HTC Saga libcamera.so is from a Sense based
+  ROM and, for reasons I yet do not understand, does not
+  function correctly when running on an AOSP based ROM.
+  The issue lies in userspace rather than the kernel as
+  the libraries still fail to function running an AOSP
   userspace with the stock HTC kernel.
 
-  Currently we're using libaudio.so and libcamera.so from
-  an OTA update for the HTC Vision (Desire Z). These were
-  released by T-Mobile USA which ship their version of the
-  HTC Vision with an AOSP ROM not a Sense one. This device
-  is the T-Mobile G2.
+  Currently we're using the libcamera.so from an OTA update
+  for the HTC Vision (Desire Z). This was released by
+  T-Mobile USA which ship their version of the HTC Vision
+  with an AOSP ROM not a Sense one. This device is known
+  as the T-Mobile G2.
 
-  These libraries function correctly with our HTC Saga as
+  The library functions correctly with our HTC Saga as
   both devices are based on the same MSM7x30 application
   processor, only running at different speeds.
 
-  - libaudio.so results in no sound.
-    All DSP and Codec settings are tied to libaudio.so.
-    Currently we use the stock Saga settings, perhaps it
-    is better to use the ones matching the libaudio we're
-    using.
-
-  - libcamera.so results in a freeze when swapping cameras,
-    once the freeze has occured the camera cannot be
-    accessed until a reboot has occurred.
-
+  Using the stock Saga libcamera.so results in a freeze
+  when swapping cameras, once the freeze has occured the
+  camera cannot be accessed until a reboot has occurred.
 
 - libhtc_ril.so
-
-  Some Saga handsets exhibit a phone-call disconnection when
-  the screen shuts off. This has been traced to a function
-  call in libhtc_ril.so "ril_func_screen_state_notified()"
+  Some Saga handsets exhibit a phone-call disconnection
+  when the screen shuts off whilst using the stock Saga
+  RIL. This has been traced to a function call in
+  libhtc_ril.so, "ril_func_screen_state_notified()",
   trying to access a sysfs entry which does not exist on
   the AOSP kernel:
 
