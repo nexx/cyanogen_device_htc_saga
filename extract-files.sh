@@ -28,7 +28,6 @@ adb pull system/bin/htc_ebdlogd ../../../vendor/$MANUFACTURER/$DEVICE/proprietar
 adb pull system/bin/logcat2 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/bin/lsc_camera ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/bin/rmt_storage ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull system/bin/snd3254 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/bcm4329.hcd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/default.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/default_org.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -48,7 +47,6 @@ adb pull system/lib/egl/libEGL_adreno200.so ../../../vendor/$MANUFACTURER/$DEVIC
 adb pull system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/egl/libGLESv2_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/egl/libq3dtools_adreno200.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull system/lib/libaudio.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libaudioalsa.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libcamera.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libgemini.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -79,7 +77,6 @@ adb pull system/lib/libposteffect.so ../../../vendor/$MANUFACTURER/$DEVICE/propr
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
 
@@ -92,7 +89,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/snd3254:/system/bin/snd3254 \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/default.acdb:system/etc/firmware/default.acdb \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/default_org.acdb:system/etc/firmware/default_org.acdb \\
@@ -112,7 +108,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
