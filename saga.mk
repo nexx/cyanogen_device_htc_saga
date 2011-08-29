@@ -78,8 +78,6 @@ PRODUCT_COPY_FILES += \
     device/htc/saga/dsp/AIC3254_REG_DualMic_XB.csv:system/etc/AIC3254_REG_DualMic_XB.csv \
     device/htc/saga/dsp/AIC3254_REG_DualMic_XC.csv:system/etc/AIC3254_REG_DualMic_XC.csv \
     device/htc/saga/dsp/AudioBTID.csv:system/etc/AudioBTID.csv \
-    device/htc/saga/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
-    device/htc/saga/dsp/TPA2051_CFG_NEL.csv:system/etc/TPA2051_CFG_NEL.csv \
     device/htc/saga/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
     device/htc/saga/dsp/CodecDSPID_WB.txt:system/etc/CodecDSPID_WB.txt \
     device/htc/saga/dsp/soundimage/Sound_Bass_Booster.txt:system/etc/soundimage/Sound_Bass_Booster.txt \
