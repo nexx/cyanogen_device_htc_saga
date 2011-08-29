@@ -1,11 +1,33 @@
 CyanogenMod Saga Device Notes
 
+Kernel
+- drivers/spi/spi_aic3254.c
+
+  The prebuilt kernel is an AOSP kernel by Cayniarb,
+  built my myself. Updates from the HTC Pyramid source
+  were recently merged and caused audio issues with some
+  Saga handsets. This was tracked down to an updated
+  drivers/spi/spi_aic3254.c.
+
+  Symptoms of this bug are loss of all sound after the
+  handset changes audio profile. With AicBootFix running,
+  this happens on phone boot. Without AicBootFix this
+  happens once something changes the audio profile, such
+  as making or receiving a phone call.
+
+  The current kernel compiles in the original Saga
+  spi_aic3254.c instead of the newer one from the Pyramid
+  source and this works around the problem. Further
+  investigation into the code is needed to find the
+  root issue however.
+
+
 Proprietary Files
 - libcamera.so
 
   The stock HTC Saga libcamera library is from a Sense
   based ROM. For reasons I yet do not understand, it
-  does  not function correctly when running on an AOSP
+  does not function correctly when running on an AOSP
   based ROM. The issue lies in userspace rather than the
   kernel as it still fails to function when running an
   AOSP userspace with the stock HTC kernel.
@@ -17,7 +39,8 @@ Proprietary Files
 
   This library functions correctly with our HTC Saga as
   both devices are based on the same MSM7x30 application
-  processor, only running at different speeds.
+  processor, only running at different speeds, and feature
+  the same camera hardware.
 
   Using the stock libcamera.so results in a freeze when
   swapping cameras, once the freeze has occured the camera
@@ -27,10 +50,10 @@ Proprietary Files
 - libhtc_ril.so
 
   Some Saga handsets exhibit a phone-call disconnection when
-  the screen shuts off. This has been traced to a function
-  call in libhtc_ril.so "ril_func_screen_state_notified()"
-  trying to access a sysfs entry which does not exist on
-  the AOSP kernel:
+  the screen shuts off whilst using the stock Saga RIL. This
+  has been traced to a function call in libhtc_ril.so
+  "ril_func_screen_state_notified()" trying to access a sysfs
+  entry which does not exist on the AOSP kernel:
 
   /sys/devices/platform/msm_hsusb/usb_function_switch
 
