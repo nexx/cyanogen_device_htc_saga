@@ -32,7 +32,6 @@ adb pull system/etc/firmware/bcm4329.hcd ../../../vendor/$MANUFACTURER/$DEVICE/p
 adb pull system/etc/firmware/default.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/default_org.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/default_org_wb.acdb ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull system/etc/firmware/mp2_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/vidc_720p_command_control.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/vidc_720p_h263_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/etc/firmware/vidc_720p_h264_dec_mc.fw ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -93,7 +92,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/default.acdb:system/etc/firmware/default.acdb \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/default_org.acdb:system/etc/firmware/default_org.acdb \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/default_org_wb.acdb:system/etc/firmware/default_org_wb.acdb \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \\
