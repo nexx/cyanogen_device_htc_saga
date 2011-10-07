@@ -62,8 +62,8 @@ on fs
     chmod 0660                /sys/class/rfkill/rfkill0/state
 
     # Bluetooth MAC address path
-    chown bluetooth bluetooth /sys/module/board_saga/parameters/bdaddress
-    setprop ro.bt.bdaddr_path /sys/module/board_saga/parameters/bdaddress
+    chown bluetooth bluetooth /sys/module/board_saga/parameters/bdaddr
+    setprop ro.bt.bdaddr_path /sys/module/board_saga/parameters/bdaddr
 
     # Bluetooth car dock pin
     chown system system /sys/class/switch/dock/bt_pin
