@@ -51,7 +51,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/saga/overlay
 
 # gsm config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/saga/spn-conf.xml:system/etc/spn-conf.xml \
     device/htc/saga/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
 PRODUCT_PACKAGES += \
