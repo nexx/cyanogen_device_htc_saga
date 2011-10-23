@@ -90,17 +90,13 @@ PRODUCT_COPY_FILES += \
     device/htc/saga/dsp/soundimage/Sound_Jazz.txt:system/etc/soundimage/Sound_Jazz.txt \
     device/htc/saga/dsp/soundimage/Sound_Latin.txt:system/etc/soundimage/Sound_Latin.txt \
     device/htc/saga/dsp/soundimage/Sound_New_Age.txt:system/etc/soundimage/Sound_New_Age.txt \
+    device/htc/saga/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
     device/htc/saga/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
     device/htc/saga/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
-    device/htc/saga/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
-    device/htc/saga/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
     device/htc/saga/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
-    device/htc/saga/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
     device/htc/saga/dsp/soundimage/Sound_Piano.txt:system/etc/soundimage/Sound_Piano.txt \
     device/htc/saga/dsp/soundimage/Sound_Pop.txt:system/etc/soundimage/Sound_Pop.txt \
     device/htc/saga/dsp/soundimage/Sound_R_B.txt:system/etc/soundimage/Sound_R_B.txt \
-    device/htc/saga/dsp/soundimage/Sound_Rec_Landscape.txt:system/etc/soundimage/Sound_Rec_Landscape.txt \
-    device/htc/saga/dsp/soundimage/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt \
     device/htc/saga/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
     device/htc/saga/dsp/soundimage/Sound_Rock.txt:system/etc/soundimage/Sound_Rock.txt \
     device/htc/saga/dsp/soundimage/Sound_SRS_A_HP.txt:system/etc/soundimage/Sound_SRS_A_HP.txt \

@@ -1,17 +1,14 @@
-Original,/system/etc/soundimage/Sound_Original.txt
-Original_SPK,/system/etc/soundimage/Sound_Original_SPK.txt
-Original_Recording,/system/etc/soundimage/Sound_Original_Recording.txt
-Recording,/system/etc/soundimage/Sound_Recording.txt
-Recording_landscape,/system/etc/soundimage/Sound_Rec_Landscape.txt
-Recording_portrait,/system/etc/soundimage/Sound_Rec_Portrait.txt
 Original_Phone,/system/etc/soundimage/Sound_Original.txt
 Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC.txt
-Original_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
-Original_Phone_HP,/system/etc/soundimage/Sound_Phone_Original_HP.txt
+Original_Phone_SPK,/system/etc/soundimage/Sound_Original.txt
+Original,/system/etc/soundimage/Sound_Original.txt
+Original_Recording,/system/etc/soundimage/Sound_Original_Recording.txt
+Original_SPK,/system/etc/soundimage/Sound_Original_SPK.txt
+Recording,/system/etc/soundimage/Sound_Recording.txt
 Srs_a_hp,/system/etc/soundimage/Sound_SRS_A_HP.txt
 Srs_a_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
 Srs_v_hp,/system/etc/soundimage/Sound_SRS_V_HP.txt
-Srs_v_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
+Srs_v_spk,/system/etc/soundimage/Sound_SRS_V_SPK.txt
 Bass Booster,/system/etc/soundimage/Sound_Bass_Booster.txt
 Blues,/system/etc/soundimage/Sound_Blues.txt
 Classical,/system/etc/soundimage/Sound_Classical.txt
