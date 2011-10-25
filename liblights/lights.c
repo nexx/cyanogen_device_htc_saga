@@ -50,7 +50,6 @@ char const*const LCD_BACKLIGHT_FILE = "/sys/class/leds/lcd-backlight/brightness"
 enum {
 	LED_AMBER,
 	LED_GREEN,
-	LED_BLUE,
 	LED_BLANK,
 };
 
@@ -92,8 +91,6 @@ static void set_speaker_light_locked (struct light_device_t *dev, struct light_s
 	unsigned int colorRGB = state->color & 0xFFFFFF;
 	unsigned int color = LED_BLANK;
 
-	if (colorRGB & 0xFF)
-		color = LED_BLUE;
 	if ((colorRGB >> 8)&0xFF)
 		color = LED_GREEN;
 	if ((colorRGB >> 16)&0xFF)
@@ -101,7 +98,6 @@ static void set_speaker_light_locked (struct light_device_t *dev, struct light_s
 
 	int amber = (colorRGB >> 16)&0xFF;
 	int green = (colorRGB >> 8)&0xFF;
-	int blue = (colorRGB)&0xFF;
 
 	switch (state->flashMode) {
 		case LIGHT_FLASH_TIMED:
