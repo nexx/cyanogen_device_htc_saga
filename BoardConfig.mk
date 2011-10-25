@@ -31,6 +31,9 @@ USE_CAMERA_STUB := false
 # inherit from the proprietary version
 -include vendor/htc/saga/BoardConfigVendor.mk
 
+# inherit from common msm7x30 Recovery
+-include device/htc/7x30-recovery/BoardConfigCommon.mk
+
 TARGET_BOOTLOADER_BOARD_NAME := saga
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
