@@ -35,7 +35,6 @@ $(call inherit-product-if-exists, vendor/htc/saga/saga-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase=android-htc \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
     ro.com.google.gmsversion=2.3_r3 \
@@ -53,10 +52,15 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/saga/overlay
 PRODUCT_COPY_FILES += \
     device/htc/saga/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
+# GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
+    gps.saga \
     lights.saga \
-    sensors.saga \
-    gps.saga
+    sensors.saga
+
+# idc files
+PRODUCT_COPY_FILES += \
+    device/htc/saga/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Keychars
 PRODUCT_COPY_FILES += \
@@ -129,22 +133,17 @@ PRODUCT_COPY_FILES += \
 
 
 # stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
+#$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
-# media profiles and capabilities spec
+# HTC Audio
 $(call inherit-product, device/htc/saga/media_a1026.mk)
-
-# htc audio settings
 $(call inherit-product, device/htc/saga/media_htcaudio.mk)
 
-$(call inherit-product-if-exists, vendor/htc/saga/saga-vendor.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
-PRODUCT_NAME := htc_saga
-PRODUCT_DEVICE := saga
-PRODUCT_MODEL := HTC Desire S
-PRODUCT_MANUFACTURER := HTC
+$(call inherit-product-if-exists, vendor/htc/saga/saga-vendor.mk)

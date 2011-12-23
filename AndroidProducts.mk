@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/saga.mk
+    $(LOCAL_DIR)/full_saga.mk

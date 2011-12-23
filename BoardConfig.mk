@@ -23,7 +23,7 @@
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 
 # inherit from common msm7x30
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
@@ -41,10 +41,11 @@ BOARD_KERNEL_PAGE_SIZE := 4096
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := saga
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
-BOARD_HAVE_HTC_FFC := true
-BOARD_USE_REVERSE_FFC := true
+#BOARD_HAVE_HTC_FFC := true
+#BOARD_USE_REVERSE_FFC := true
+
 # Workaround for Saga's broken overlay scaling
-BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+#BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
 # cat /proc/emmc
 #dev:        size     erasesize name
