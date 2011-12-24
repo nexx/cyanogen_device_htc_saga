@@ -53,7 +53,6 @@ adb pull system/lib/libaudioalsa.so ../../../vendor/$MANUFACTURER/$DEVICE/propri
 adb pull system/lib/libC2D2.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libcamera.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libgemini.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull system/lib/libgenlock.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libgsl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libhtc_acoustic.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libhtc_ril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -84,7 +83,6 @@ adb pull system/lib/libsc-a2xx.so ../../../vendor/$MANUFACTURER/$DEVICE/propriet
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libgenlock.so:obj/lib/libgenlock.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # All the blobs necessary for saga
@@ -121,7 +119,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libC2D2.so:/system/lib/libC2D2.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libgenlock.so:/system/lib/libgenlock.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
