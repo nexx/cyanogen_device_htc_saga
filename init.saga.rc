@@ -1,23 +1,27 @@
-on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
-    mkdir /data/radio 0770 radio radio
+import init.htc7x30.usb.rc
 
-on init
+on early-init
     export EXTERNAL_STORAGE /mnt/sdcard
     mkdir /mnt/sdcard 0000 system system
     symlink /mnt/sdcard /sdcard
 
-on fs
-    # Misc and WiFi
+on early-fs
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
+    mkdir /devlog 0700 root root
+    mount ext4 /dev/block/mmcblk0p25 /system wait ro barrier=1
+    mount ext4 /dev/block/mmcblk0p26 /data wait noatime nosuid nodev barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p27 /cache wait noatime nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p28 /devlog wait noatime nosuid nodev barrier=1
+
+    # Misc, Radio and WiFi
+    mkdir /data/radio 0770 radio radio
     mkdir /data/misc 1771 system misc
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-
-    # Kernel debugging
-    mkdir /data/d 0777 system system
-    mount debugfs /data/d /data/d
 
     # CyanogenMod SysFS entries
     chown radio system /sys/module/gpio_event/parameters/phone_call_status
@@ -68,8 +72,6 @@ on fs
     chown system system /sys/class/leds/amber/blink
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/green/blink
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/button-backlight/brightness
     chown system camera /sys/class/leds/flashlight/brightness
     chmod 0660          /sys/class/leds/flashlight/brightness
@@ -87,13 +89,16 @@ on fs
     write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
     write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
 
+on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
     class main
-    socket wpa_eth0 dgram 660 wifi wifi
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -108,7 +113,7 @@ service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-service iprenew_eth0 /system/bin/dhcpcd -n
+service iprenew_wlan0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
@@ -136,21 +141,21 @@ service bugreport /system/bin/bugmailer.sh -v
     oneshot
     keycodes 114 115 116
 
-service hciattach /system/bin/brcm_patchram_plus \
-    --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
+    --tosleep 50000 --baudrate 3000000 --use_baudrate_for_download --i2s=1,1,0,1 \
+    --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
     class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
 
-service udhcpd /system/bin/udhcpd
-    class main
-    disabled
-    oneshot
-
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     class main
     user root
+
+on property:ro.use_data_netmgrd=false
+    # netmgr not supported on specific target
+    stop netmgrd
 
 service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
     class main
