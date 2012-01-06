@@ -20,10 +20,6 @@ on fs
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
-    # Kernel debugging
-    mkdir /data/d 0777 system system
-    mount debugfs /data/d /data/d
-
     # CyanogenMod SysFS entries
     chown radio system /sys/module/gpio_event/parameters/phone_call_status
     chmod 0664         /sys/module/gpio_event/parameters/phone_call_status
