@@ -7,7 +7,7 @@ debug.fb.rgb565=0
 
 #qcom display
 debug.sf.hw=1
-debug.composition.type=c2d
+debug.composition.type=mdp
 debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
 
