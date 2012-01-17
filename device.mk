@@ -61,14 +61,12 @@ PRODUCT_PACKAGES += \
 
 # idc files
 PRODUCT_COPY_FILES += \
-    device/htc/saga/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
+    device/htc/saga/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
+    device/htc/saga/idc/saga-keypad.idc:system/usr/idc/saga-keypad.idc
 
 # Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/saga/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/saga/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/saga/keychars/saga-keypad.kcm.bin:system/usr/keychars/saga-keypad.kcm.bin \
-    device/htc/saga/keychars/saga-keypad-wwe.kcm.bin:system/usr/keychars/saga-keypad-wwe.kcm.bin
+    device/htc/saga/keychars/atmel-touchscreen.kcm:system/usr/keychars/atmel-touchscreen.kcm
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -76,7 +74,7 @@ PRODUCT_COPY_FILES += \
     device/htc/saga/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/saga/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/saga/keylayout/saga-keypad.kl:system/usr/keylayout/saga-keypad.kl \
-    device/htc/saga/keylayout/saga-keypad-wwe.kl:system/usr/keylayout/saga-keypad-wwe.kl
+    device/htc/saga/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
