@@ -65,10 +65,10 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>31</item>
         <item>41</item>
         <item>51</item>
         <item>61</item>
+        <item>71</item>
         <item>95</item>
         <item>130</item>
         <item>186</item>
@@ -86,7 +86,7 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-        <item>0</item>
+        <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -117,7 +117,7 @@
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">31</integer>
+    <integer name="config_screenBrightnessDim">41</integer>
 
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
@@ -182,11 +182,6 @@
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <bool name="config_ui_enableFadingMarquee">false</bool>
-
-    <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <integer-array name="config_virtualKeyVibePattern">
-        <item>10</item>
-    </integer-array>
 
     <!-- Allow the menu hard key to be disabled in LockScreen on some devices -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
