@@ -112,8 +112,8 @@ PRODUCT_COPY_FILES += \
     device/htc/saga/vold.fstab:system/etc/vold.fstab
 
 # media config xml file
-#PRODUCT_COPY_FILES += \
-#    device/htc/saga/media_profiles.xml:system/etc/media_profiles.xml
+PRODUCT_COPY_FILES += \
+    device/htc/saga/media_profiles.xml:system/etc/media_profiles.xml
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
