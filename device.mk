@@ -24,7 +24,6 @@ PRODUCT_COPY_FILES += device/htc/saga/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
     device/htc/saga/init.saga.rc:root/init.saga.rc \
-    device/htc/saga/init.saga.usb.rc:root/init.saga.usb.rc \
     device/htc/saga/ueventd.saga.rc:root/ueventd.saga.rc
 
 PRODUCT_COPY_FILES += \
