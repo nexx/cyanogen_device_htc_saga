@@ -14,8 +14,7 @@
      limitations under the License.
 -->
 
-<!-- Saga-specific Contacts app resources. -->
 <resources>
-    <!-- Enable the onscreen "Dial" button in the dialer. -->
-    <bool name="config_show_onscreen_dial_button">true</bool>
+    <!-- Whether or not the dock settings are to be displayed for this device when docked -->
+    <bool name="has_dock_settings">false</bool>
 </resources>
