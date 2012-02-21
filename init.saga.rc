@@ -27,7 +27,7 @@ on early-fs
     chown radio system /sys/module/gpio_event/parameters/phone_call_status
     chmod 0664         /sys/module/gpio_event/parameters/phone_call_status
     chown radio system /sys/camera_led_status/led_ril_status
-    chmod 0640         /sys/camera_led_status/led_ril_status
+    chmod 0644         /sys/camera_led_status/led_ril_status
 
     # Power Management
     chmod 0664 /sys/module/pm/parameters/idle_sleep_mode
