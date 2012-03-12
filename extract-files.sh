@@ -56,7 +56,6 @@ adb pull system/lib/libmmipl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietar
 adb pull system/lib/libmmjpeg.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/liboemcamera.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull system/lib/libposteffect.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull /system/lib/libwebkitaccel.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -78,8 +77,7 @@ adb pull /system/lib/libwebkitaccel.so ../../../vendor/$MANUFACTURER/$DEVICE/pro
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libwebkitaccel.so:obj/lib/libwebkitaccel.so
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # All the blobs necessary for saga
 PRODUCT_COPY_FILES += \\
@@ -117,8 +115,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libwebkitaccel.so:/system/lib/libwebkitaccel.so
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so
 EOF
 
 ./setup-makefiles.sh
